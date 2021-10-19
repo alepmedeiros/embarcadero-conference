@@ -2,9 +2,9 @@
 <BorlandProject>
 	<Transactions>
     <Transaction>2021/10/18 21:57:55.000.919,=C:\Users\Criacao\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2021/10/18 21:58:26.000.775,C:\Users\Criacao\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\Criacao\Documents\Embarcadero\Studio\Projects\CleanArch_EmbrConf.test.dproj</Transaction>
-    <Transaction>2021/10/18 21:58:56.000.584,C:\Users\Criacao\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Repositório_Academia\embarcadero-conference\test\CleanArch_EmbrConf.test.pas</Transaction>
-    <Transaction>2021/10/18 21:59:25.000.805,C:\Users\Criacao\Documents\Embarcadero\Studio\Projects\CleanArch_EmbrConf.test.dproj=C:\Users\Criacao\Documents\Embarcadero\Studio\Projects\CleanArch_EmbrConf.main.test.dproj</Transaction>
-    <Transaction>2021/10/18 21:59:30.000.641,C:\Users\Criacao\Documents\Embarcadero\Studio\Projects\CleanArch_EmbrConf.main.test.dproj=C:\Repositório_Academia\embarcadero-conference\test\CleanArch_EmbrConf.main.test.dproj</Transaction>
+    <Transaction>2021/10/18 21:58:26.000.775,C:\Users\Criacao\Documents\Embarcadero\Studio\Projects\CleanArch_EmbrConf.test.dproj=C:\Users\Criacao\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2021/10/18 21:58:56.000.584,C:\Repositório_Academia\embarcadero-conference\test\CleanArch_EmbrConf.test.pas=C:\Users\Criacao\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2021/10/18 21:59:25.000.805,C:\Users\Criacao\Documents\Embarcadero\Studio\Projects\CleanArch_EmbrConf.main.test.dproj=C:\Users\Criacao\Documents\Embarcadero\Studio\Projects\CleanArch_EmbrConf.test.dproj</Transaction>
+    <Transaction>2021/10/18 21:59:30.000.641,C:\Repositório_Academia\embarcadero-conference\test\CleanArch_EmbrConf.main.test.dproj=C:\Users\Criacao\Documents\Embarcadero\Studio\Projects\CleanArch_EmbrConf.main.test.dproj</Transaction>
   </Transactions>
 </BorlandProject>

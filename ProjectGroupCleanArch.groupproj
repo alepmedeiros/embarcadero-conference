@@ -9,9 +9,6 @@
         <Projects Include="test\CleanArch_EmbrConf.main.test.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="C:\Repositorio_Academia\CleanArchitectureDelphi\ExemploCA.dproj">
-            <Dependencies/>
-        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -38,23 +35,14 @@
     <Target Name="CleanArch_EmbrConf_main_test:Make">
         <MSBuild Projects="test\CleanArch_EmbrConf.main.test.dproj" Targets="Make"/>
     </Target>
-    <Target Name="ExemploCA">
-        <MSBuild Projects="C:\Repositorio_Academia\CleanArchitectureDelphi\ExemploCA.dproj"/>
-    </Target>
-    <Target Name="ExemploCA:Clean">
-        <MSBuild Projects="C:\Repositorio_Academia\CleanArchitectureDelphi\ExemploCA.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="ExemploCA:Make">
-        <MSBuild Projects="C:\Repositorio_Academia\CleanArchitectureDelphi\ExemploCA.dproj" Targets="Make"/>
-    </Target>
     <Target Name="Build">
-        <CallTarget Targets="CleanArch_EmbrConf;CleanArch_EmbrConf_main_test;ExemploCA"/>
+        <CallTarget Targets="CleanArch_EmbrConf;CleanArch_EmbrConf_main_test"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="CleanArch_EmbrConf:Clean;CleanArch_EmbrConf_main_test:Clean;ExemploCA:Clean"/>
+        <CallTarget Targets="CleanArch_EmbrConf:Clean;CleanArch_EmbrConf_main_test:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="CleanArch_EmbrConf:Make;CleanArch_EmbrConf_main_test:Make;ExemploCA:Make"/>
+        <CallTarget Targets="CleanArch_EmbrConf:Make;CleanArch_EmbrConf_main_test:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>
