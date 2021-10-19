@@ -1,0 +1,80 @@
+unit CleanArch_EmbrConf.Core.Entity.Impl.ParkedCar;
+
+interface
+
+uses
+  CleanArch_EmbrConf.Core.Entity.Interfaces,
+  System.RegularExpressions;
+
+type
+  TParkedCar = class(TInterfacedObject, iParkedCar)
+    private
+      FCode : string;
+      FPlate : String;
+      Fdata : string;
+    public
+      constructor Create;
+      destructor Destroy; override;
+      class function New : iParkedCar;
+      function Code(Value : String) : iParkedCar; overload;
+      function Code : String; overload;
+      function Plate(Value : String) : iParkedCar; overload;
+      function Plate : String; overload;
+      function Data(Value : String) : iParkedCar; overload;
+      function Data : String; overload;
+  end;
+
+implementation
+
+function TParkedCar.Code(Value: String): iParkedCar;
+begin
+  result := self;
+  fcode := value;
+end;
+
+function TParkedCar.Code: String;
+begin
+  result := fcode;
+end;
+
+constructor TParkedCar.Create;
+begin
+
+end;
+
+function TParkedCar.Data: String;
+begin
+  result := fdata;
+end;
+
+function TParkedCar.Data(Value: String): iParkedCar;
+begin
+  result := self;
+  fdata := value;
+end;
+
+destructor TParkedCar.Destroy;
+begin
+
+  inherited;
+end;
+
+class function TParkedCar.New : iParkedCar;
+begin
+  Result := Self.Create;
+end;
+
+function TParkedCar.Plate(Value: String): iParkedCar;
+begin
+  result := self;
+  FPlate := value;
+end;
+
+function TParkedCar.Plate: String;
+begin
+  if TRegEx.IsMatch(FPlate,'\w[A-Z]{1,3}-[0-9]{1,4}') then
+
+  result := FPlate;
+end;
+
+end.

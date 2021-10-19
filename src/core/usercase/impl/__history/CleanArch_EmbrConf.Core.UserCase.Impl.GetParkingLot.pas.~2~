@@ -1,0 +1,49 @@
+unit CleanArch_EmbrConf.Core.UserCase.Impl.GetParkingLot;
+
+interface
+
+uses
+  CleanArch_EmbrConf.Core.UserCase.Interfaces,
+  CleanArch_EmbrConf.Core.Entity.Interfaces;
+
+type
+  TGetParkingLot = class(TInterfacedObject, iGetParkingLot)
+    private
+      FCode : String;
+    public
+      constructor Create;
+      destructor Destroy; override;
+      class function New : iGetParkingLot;
+      function ParkingLot : iParkingLot;
+      function Execute(Code : String) : iGetParkingLot;
+  end;
+
+implementation
+
+constructor TGetParkingLot.Create;
+begin
+
+end;
+
+destructor TGetParkingLot.Destroy;
+begin
+
+  inherited;
+end;
+
+function TGetParkingLot.Execute(Code : String) : iGetParkingLot;
+begin
+  Result := Self;
+end;
+
+class function TGetParkingLot.New : iGetParkingLot;
+begin
+  Result := Self.Create;
+end;
+
+function TGetParkingLot.ParkingLot: iParkingLot;
+begin
+
+end;
+
+end.

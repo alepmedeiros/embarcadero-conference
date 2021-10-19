@@ -1,0 +1,60 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{4148C4F5-780B-468F-B4CC-B223E06C9BCC}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="CleanArch_EmbrConf.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="test\CleanArch_EmbrConf.main.test.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="C:\Repositorio_Academia\CleanArchitectureDelphi\ExemploCA.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="CleanArch_EmbrConf">
+        <MSBuild Projects="CleanArch_EmbrConf.dproj"/>
+    </Target>
+    <Target Name="CleanArch_EmbrConf:Clean">
+        <MSBuild Projects="CleanArch_EmbrConf.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CleanArch_EmbrConf:Make">
+        <MSBuild Projects="CleanArch_EmbrConf.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CleanArch_EmbrConf_main_test">
+        <MSBuild Projects="test\CleanArch_EmbrConf.main.test.dproj"/>
+    </Target>
+    <Target Name="CleanArch_EmbrConf_main_test:Clean">
+        <MSBuild Projects="test\CleanArch_EmbrConf.main.test.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CleanArch_EmbrConf_main_test:Make">
+        <MSBuild Projects="test\CleanArch_EmbrConf.main.test.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ExemploCA">
+        <MSBuild Projects="C:\Repositorio_Academia\CleanArchitectureDelphi\ExemploCA.dproj"/>
+    </Target>
+    <Target Name="ExemploCA:Clean">
+        <MSBuild Projects="C:\Repositorio_Academia\CleanArchitectureDelphi\ExemploCA.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ExemploCA:Make">
+        <MSBuild Projects="C:\Repositorio_Academia\CleanArchitectureDelphi\ExemploCA.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="CleanArch_EmbrConf;CleanArch_EmbrConf_main_test;ExemploCA"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="CleanArch_EmbrConf:Clean;CleanArch_EmbrConf_main_test:Clean;ExemploCA:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="CleanArch_EmbrConf:Make;CleanArch_EmbrConf_main_test:Make;ExemploCA:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

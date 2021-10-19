@@ -1,0 +1,15 @@
+unit CleanArch_EmbrConf.Core.UserCase.Interfaces;
+
+interface
+
+type
+  iEnterParkingLot = interface
+    function Code(Value : String) : iEnterParkingLot;
+    function Plate(Value : String) : iEnterParkingLot;
+    function Data(Value : String) : iEnterParkingLot;
+    function Execute : iEnterParkingLot;
+  end;
+
+implementation
+
+end.

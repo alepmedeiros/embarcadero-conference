@@ -1,0 +1,58 @@
+unit CleanArch_EmbrConf.Infra.Repository.Memory;
+
+interface
+
+uses
+  CleanArch_EmbrConf.Core.Repository.Interfaces,
+  CleanArch_EmbrConf.Core.Entity.Interfaces,
+  System.JSON;
+
+type
+  TParkingLotRepository = class(TInterfacedObject, iParkingLotRepository)
+  private
+  public
+    constructor Create;
+    destructor Destroy; override;
+    class function New: iParkingLotRepository;
+    function getParkingLot(Code: String): iParkingLot; overload;
+    function getParkingLot(Code: String; var aJsonArray: TJsonArray)
+      : iParkingLotRepository; overload;
+    function saveParkedCar(Value: iParkedCar): iParkingLotRepository;
+  end;
+
+implementation
+
+constructor TParkingLotRepository.Create;
+begin
+
+end;
+
+destructor TParkingLotRepository.Destroy;
+begin
+
+  inherited;
+end;
+
+function TParkingLotRepository.getParkingLot(Code: String): iParkingLot;
+begin
+
+end;
+
+function TParkingLotRepository.getParkingLot(Code: String;
+  var aJsonArray: TJsonArray): iParkingLotRepository;
+begin
+
+end;
+
+class function TParkingLotRepository.New: iParkingLotRepository;
+begin
+  Result := Self.Create;
+end;
+
+function TParkingLotRepository.saveParkedCar(Value: iParkedCar)
+  : iParkingLotRepository;
+begin
+
+end;
+
+end.

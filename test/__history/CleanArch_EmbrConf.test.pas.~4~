@@ -1,0 +1,38 @@
+unit CleanArch_EmbrConf.test;
+
+interface
+
+uses
+  CleanArch_EmbrConf.Core.UserCase.Interfaces,
+  CleanArch_EmbrConf.Core.Repository.Interfaces,
+  DUnitX.TestFramework;
+
+type
+  [TestFixture]
+  TMyTestObject = class
+  private
+    FEnterParkingLot: iEnterParkingLot;
+    FParkingLotRepositoryMemory: iParkingLotRepository;
+    FParkingLotRepositorySQL : iParkingLotRepository;
+    FGetParkingLot: iGetParkingLot;
+  public
+    [Setup]
+    procedure Setup;
+    [TearDown]
+    procedure TearDown;
+  end;
+
+implementation
+
+procedure TMyTestObject.Setup;
+begin
+end;
+
+procedure TMyTestObject.TearDown;
+begin
+end;
+
+initialization
+  TDUnitX.RegisterTestFixture(TMyTestObject);
+
+end.

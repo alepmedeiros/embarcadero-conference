@@ -1,0 +1,21 @@
+unit CleanArch_EmbrConf.Adapter.interfaces;
+
+interface
+
+type
+  iParkingLotAdapter = interface
+    function Code(Value : String) : iParkingLotAdapter; overload;
+    function Code : String; overload;
+    function Capacity(Value : String) : iParkingLotAdapter; overload;
+    function Capacity : String; overload;
+    function OpenHour(Value : String) : iParkingLotAdapter; overload;
+    function OpenHour : String; overload;
+    function CloseHour(Value : String) : iParkingLotAdapter; overload;
+    function CloseHour : String; overload;
+    function OccupiedSpaces(Value : String) : iParkingLotAdapter; overload;
+    function OccupiedSpaces : String; overload;
+  end;
+
+implementation
+
+end.

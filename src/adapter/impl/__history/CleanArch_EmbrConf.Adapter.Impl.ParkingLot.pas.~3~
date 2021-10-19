@@ -1,0 +1,115 @@
+unit CleanArch_EmbrConf.Adapter.Impl.ParkingLot;
+
+interface
+
+uses
+  CleanArch_EmbrConf.Adapter.interfaces,
+  CleanArch_EmbrConf.Core.Entity.Interfaces,
+  CleanArch_EmbrConf.Core.Entity.Impl.ParkingLot;
+
+type
+  TParkingLotAdapter = class(TInterfacedObject, iParkingLotAdapter)
+    private
+      FParkingLot : iParkingLot;
+
+      FCode: String;
+      FCapacity: Integer;
+      FOpenHour: Integer;
+      FCloseHour: Integer;
+      FOccupiedSpaces: Integer;
+    public
+      constructor Create;
+      destructor Destroy; override;
+      class function New : iParkingLotAdapter;
+      function Code(Value : String) : iParkingLotAdapter; overload;
+      function Code : String; overload;
+      function Capacity(Value : String) : iParkingLotAdapter; overload;
+      function Capacity : String; overload;
+      function OpenHour(Value : String) : iParkingLotAdapter; overload;
+      function OpenHour : String; overload;
+      function CloseHour(Value : String) : iParkingLotAdapter; overload;
+      function CloseHour : String; overload;
+      function OccupiedSpaces(Value : String) : iParkingLotAdapter; overload;
+      function OccupiedSpaces : String; overload;
+      function ParkingLot : iParkingLot;
+  end;
+
+implementation
+
+function TParkingLotAdapter.Capacity(Value: String): iParkingLotAdapter;
+begin
+
+end;
+
+function TParkingLotAdapter.Capacity: String;
+begin
+
+end;
+
+function TParkingLotAdapter.CloseHour: String;
+begin
+
+end;
+
+function TParkingLotAdapter.CloseHour(Value: String): iParkingLotAdapter;
+begin
+
+end;
+
+function TParkingLotAdapter.Code: String;
+begin
+
+end;
+
+function TParkingLotAdapter.Code(Value: String): iParkingLotAdapter;
+begin
+
+end;
+
+constructor TParkingLotAdapter.Create;
+begin
+  FParkingLot := TParkingLot.New;
+end;
+
+destructor TParkingLotAdapter.Destroy;
+begin
+
+  inherited;
+end;
+
+class function TParkingLotAdapter.New : iParkingLotAdapter;
+begin
+  Result := Self.Create;
+end;
+
+function TParkingLotAdapter.OccupiedSpaces(Value: String): iParkingLotAdapter;
+begin
+
+end;
+
+function TParkingLotAdapter.OccupiedSpaces: String;
+begin
+
+end;
+
+function TParkingLotAdapter.OpenHour: String;
+begin
+
+end;
+
+function TParkingLotAdapter.ParkingLot: iParkingLot;
+begin
+  Result := FParkingLot
+              .Code(FCode)
+              .Capacity(FCapacity)
+              .OpenHour(FOpenHour)
+              .CloseHour(FCloseHour)
+              .OccupiedSpaces(FOccupiedSpaces);
+end;
+
+function TParkingLotAdapter.OpenHour(Value: String): iParkingLotAdapter;
+begin
+
+end;
+
+end.

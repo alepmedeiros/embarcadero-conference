@@ -1,0 +1,12 @@
+unit CleanArch_EmbrConf.Core.Repository.Interfaces;
+
+interface
+
+type
+  iParkingLotRepository = interface
+
+  end;
+
+implementation
+
+end.
