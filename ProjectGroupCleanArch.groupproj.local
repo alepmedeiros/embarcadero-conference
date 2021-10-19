@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<BorlandProject>
-	<Transactions>
-    <Transaction>2021/10/18 21:59:59.000.384,C:\Users\Criacao\Documents\Embarcadero\Studio\Projects\ProjectGroup1.groupproj=C:\Repositório_Academia\embarcadero-conference\ProjectGroupCleanArch.groupproj</Transaction>
-  </Transactions>
-	<Default.Personality>
-		<Projects ActiveProject="C:\Repositório_Academia\embarcadero-conference\test\CleanArch_EmbrConf.main.test.dproj"/>
-	</Default.Personality>
-</BorlandProject>
