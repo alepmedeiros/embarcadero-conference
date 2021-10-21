@@ -1,0 +1,12 @@
+{
+	"name": "embarcadero-conference",
+	"description": "",
+	"version": "1.0.0",
+	"homepage": "",
+	"mainsrc": "./",
+	"projects": [],
+	"dependencies": {
+		"https://github.com/hashload/horse": "^v2.0.14",
+		"https://github.com/viniciussanchez/dataset-serialize": "^v2.3.3"
+	}
+}

@@ -3,10 +3,10 @@ unit CleanArch_EmbrConf.Infra.Repository.Memory;
 interface
 
 uses
-  CleanArch_EmbrConf.Core.Repository.Interfaces,
   CleanArch_EmbrConf.Core.Entity.Interfaces,
   System.JSON, CleanArch_EmbrConf.Core.Entity.Impl.ParkingLot,
-  CleanArch_EmbrConf.Adapter.Impl.ParkingLotAdapter;
+  CleanArch_EmbrConf.Adapter.Impl.ParkingLotAdapter,
+  CleanArch_EmbrConf.Core.Repository.Interfaces;
 
 type
   TParkingLotRepositoryMemory = class(TInterfacedObject, iParkingLotRepository)
@@ -15,10 +15,9 @@ type
     constructor Create;
     destructor Destroy; override;
     class function New: iParkingLotRepository;
-    function getParkingLot(Code: String): iParkingLot; overload;
-    function getParkingLot(Code: String; var aJsonArray: TJsonArray)
-      : iParkingLotRepository; overload;
-    function saveParkedCar(Value: iParkedCar): iParkingLotRepository;
+    function getParkingLot(Code : String) : iParkingLot;
+    function getParkingLotJSON(Code : String) : TJSONArray;
+    function saveParkedCar(Value : iParkedCar) : iParkingLotRepository;
   end;
 
 implementation
@@ -54,8 +53,8 @@ begin
   Result := lParkingLot;
 end;
 
-function TParkingLotRepositoryMemory.getParkingLot(Code: String;
-  var aJsonArray: TJsonArray): iParkingLotRepository;
+function TParkingLotRepositoryMemory.getParkingLotJSON(
+  Code: String): TJSONArray;
 begin
 
 end;

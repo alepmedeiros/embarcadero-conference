@@ -81,7 +81,7 @@
         <UsingDelphiRTL>true</UsingDelphiRTL>
         <Icon_MainIcon>$(BDS)\bin\delphi_PROJECTICON.ico</Icon_MainIcon>
         <Icns_MainIcns>$(BDS)\bin\delphi_PROJECTICNS.icns</Icns_MainIcns>
-        <DCC_UnitSearchPath>$(DUnitX);$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <DCC_UnitSearchPath>$(DUnitX);modules\.dcp;modules\.dcu;modules;modules\dataset-serialize\src;modules\horse\src;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
         <SanitizedProjectName>CleanArch_EmbrConf_main_test</SanitizedProjectName>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Android)'!=''">
@@ -124,7 +124,7 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
         <DCC_RemoteDebug>false</DCC_RemoteDebug>
-        <DCC_UnitSearchPath>C:\Repositório_Academia\embarcadero-conference\test\src;C:\Repositório_Academia\embarcadero-conference\src\adapter;C:\Repositório_Academia\embarcadero-conference\src\adapter\impl;C:\Repositório_Academia\embarcadero-conference\src\core;C:\Repositório_Academia\embarcadero-conference\src\core\entity;C:\Repositório_Academia\embarcadero-conference\src\core\entity\impl;C:\Repositório_Academia\embarcadero-conference\src\core\repository;C:\Repositório_Academia\embarcadero-conference\src\core\usercase;C:\Repositório_Academia\embarcadero-conference\src\core\usercase\impl;C:\Repositório_Academia\embarcadero-conference\src\infra;C:\Repositório_Academia\embarcadero-conference\src\infra\repository;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <DCC_UnitSearchPath>C:\lixo\embarcadero-conference\src\infra\database\impl;C:\lixo\embarcadero-conference\src\infra\database;C:\lixo\embarcadero-conference\src\infra\http;C:\lixo\embarcadero-conference\src\controller;C:\lixo\embarcadero-conference\src\infra\repository;C:\lixo\embarcadero-conference\src\infra;C:\lixo\embarcadero-conference\src\core;C:\lixo\embarcadero-conference\src\core\entity;C:\lixo\embarcadero-conference\src\core\entity\impl;C:\lixo\embarcadero-conference\src\core\repository;C:\lixo\embarcadero-conference\src\core\usercase;C:\lixo\embarcadero-conference\src\core\usercase\impl;C:\lixo\embarcadero-conference\src\adapter;C:\lixo\embarcadero-conference\src\adapter\impl;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <Manifest_File>(None)</Manifest_File>
     </PropertyGroup>

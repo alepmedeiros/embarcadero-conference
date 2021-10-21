@@ -8,8 +8,8 @@ uses
 
 type
   iParkingLotRepository = interface
-    function getParkingLot(Code : String) : iParkingLot; overload;
-    function getParkingLot(Code : String; var aJsonArray : TJsonArray) : iParkingLotRepository; overload;
+    function getParkingLot(Code : String) : iParkingLot;
+    function getParkingLotJSON(Code : String) : TJSONArray;
     function saveParkedCar(Value : iParkedCar) : iParkingLotRepository;
   end;
 

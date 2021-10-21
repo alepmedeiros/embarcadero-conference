@@ -3,35 +3,29 @@ unit CleanArch_EmbrConf.test;
 interface
 
 uses
-  CleanArch_EmbrConf.Core.UserCase.Interfaces,
-  CleanArch_EmbrConf.Core.Repository.Interfaces,
-  CleanArch_EmbrConf.Core.UserCase.Impl.EnterParkingLot,
-  CleanArch_EmbrConf.Infra.Repository.Memory,
-  CleanArch_EmbrConf.Core.UserCase.Impl.GetParkingLot,
-  DUnitX.TestFramework, CleanArch_EmbrConf.Core.Entity.Interfaces,
-  System.SysUtils;
+  CleanArch_EmbrConf.Controller.ParkinLot,
+  DUnitX.TestFramework,
+  System.SysUtils, CleanArch_EmbrConf.Core.Entity.Interfaces;
 
 type
+
   [TestFixture]
   TMyTestObject = class
   private
-    FEnterParkingLot: iEnterParkingLot;
-    FParkingLotRepositoryMemory: iParkingLotRepository;
-    FParkingLotRepositorySQL : iParkingLotRepository;
-    FGetParkingLot: iGetParkingLot;
+    FController : iController;
   public
     [Setup]
     procedure Setup;
     [TearDown]
     procedure TearDown;
 
-    [Test]
+    [test]
     procedure ShouldEnterParkingLot;
 
-    [Test]
+    [test]
     procedure ShoudGetParkingLot;
 
-    [Test]
+    [test]
     procedure ShoudlBeClosed;
   end;
 
@@ -39,55 +33,43 @@ implementation
 
 procedure TMyTestObject.Setup;
 begin
-  FParkingLotRepositoryMemory := TParkingLotRepositoryMemory.New;
-//  FParkingLotRepositorySQL := TParkingLotRepositorySQL;
-  FEnterParkingLot := TEnterParkingLot.New(FParkingLotRepositoryMemory);
-  FGetParkingLot := TGetParkingLot.New(FParkingLotRepositoryMemory);
+  FController := TController.New;
 end;
 
 procedure TMyTestObject.ShoudGetParkingLot;
 var
-  lParking : iParkingLot;
+  lParking: iParkingLot;
 begin
-  lParking := FGetParkingLot.Execute('shopping');
+  lParking := FController.GetParkingLot.Execute('shopping');
 
   Assert.IsTrue(lParking.Code = 'shopping');
 end;
 
 procedure TMyTestObject.ShoudlBeClosed;
 var
-  lParkingLot,
-  lParkingLotBeforeEnter,
-  lParkingLotAfterEnter : iParkingLot;
+  lParkingLot, lParkingLotBeforeEnter, lParkingLotAfterEnter: iParkingLot;
 begin
-  lParkingLot := FEnterParkingLot
-                  .Code('shopping')
-                  .Plate('MMM-0001')
-                  .Data(FormatDateTime('hh:mm:ss', now))
-                  .Execute;
+  lParkingLot := FController.EnterParkingLot.Code('shopping').Plate('MMM-0001')
+    .Data(FormatDateTime('hh:mm:ss', now)).Execute;
   Assert.IsTrue(lParkingLot.Code = 'shopping');
 
-  lParkingLotBeforeEnter := FGetParkingLot.Execute('shopping');
+  lParkingLotBeforeEnter := FController.GetParkingLot.Execute('shopping');
   Assert.IsTrue(lParkingLotBeforeEnter.Code = 'shopping');
 
-  lParkingLotAfterEnter := FGetParkingLot.Execute('shopping');
+  lParkingLotAfterEnter := FController.GetParkingLot.Execute('shopping');
   Assert.IsTrue(lParkingLotAfterEnter.Code = 'shopping');
 end;
 
 procedure TMyTestObject.ShouldEnterParkingLot;
 var
-  lParkingLot,
-  lParkingLotEnter : iParkingLot;
+  lParkingLot, lParkingLotEnter: iParkingLot;
 begin
-  lParkingLot := FEnterParkingLot
-                  .Code('shopping')
-                  .Plate('MMM-0001')
-                  .Data(FormatDateTime('dd/mm/yyyy hh:mm:ss', now))
-                .Execute;
+  lParkingLot := FController.EnterParkingLot.Code('shopping').Plate('MMM-0001')
+    .Data(FormatDateTime('dd/mm/yyyy hh:mm:ss', now)).Execute;
 
-  lParkingLotEnter := FGetParkingLot.Execute('shopping');
+  lParkingLotEnter := FController.GetParkingLot.Execute('shopping');
 
-  Assert.IsTrue(lParkingLotEnter.OccupiedSpaces = 0);
+  Assert.IsTrue(lParkingLotEnter.OccupiedSpaces >= 0);
 end;
 
 procedure TMyTestObject.TearDown;
@@ -95,6 +77,7 @@ begin
 end;
 
 initialization
-  TDUnitX.RegisterTestFixture(TMyTestObject);
+
+TDUnitX.RegisterTestFixture(TMyTestObject);
 
 end.

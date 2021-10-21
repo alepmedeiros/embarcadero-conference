@@ -79,6 +79,7 @@
         <DCC_K>false</DCC_K>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
         <SanitizedProjectName>CleanArch_EmbrConf</SanitizedProjectName>
+        <DCC_UnitSearchPath>modules\.dcp;modules\.dcu;modules;modules\dataset-serialize\src;modules\horse\src;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Android)'!=''">
         <DCC_UsePackage>DBXSqliteDriver;RESTComponents;DBXInterBaseDriver;emsclientfiredac;DataSnapFireDAC;tethering;bindcompfmx;FmxTeeUI;FireDACIBDriver;fmx;FireDACDBXDriver;dbexpress;IndyCore;dsnap;DataSnapCommon;emsclient;FireDACCommon;RESTBackendComponents;soapserver;bindengine;CloudService;FireDACCommonDriver;DataSnapClient;inet;bindcompdbx;IndyIPCommon;IndyIPServer;IndySystem;fmxFireDAC;FireDAC;FireDACSqliteDriver;ibmonitor;FMXTee;soaprtl;DbxCommonDriver;ibxpress;xmlrtl;DataSnapNativeClient;ibxbindings;FireDACDSDriver;soapmidas;rtl;DbxClientDriver;CustomIPTransport;bindcomp;IndyIPClient;dbxcds;DataSnapProviderClient;dsnapxml;dbrtl;IndyProtocols;$(DCC_UsePackage)</DCC_UsePackage>
@@ -168,14 +169,20 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
+        <DCCReference Include="src\infra\database\CleanArch_EmbrConf.Infra.Database.Interfaces.pas"/>
+        <DCCReference Include="src\infra\database\impl\CleanArch_EmbrConf.Infra.Database.Conexao.pas"/>
+        <DCCReference Include="src\infra\database\impl\CleanArch_EmbrConf.Infra.Database.Impl.Database.pas"/>
+        <DCCReference Include="src\infra\http\CleanArch_EmbrConf.Infra.Http.Api.pas"/>
+        <DCCReference Include="src\infra\repository\CleanArch_EmbrConf.Infra.Repository.Memory.pas"/>
+        <DCCReference Include="src\infra\repository\CleanArch_EmbrConf.Infra.Repository.SQL.pas"/>
         <DCCReference Include="src\core\usercase\CleanArch_EmbrConf.Core.UserCase.Interfaces.pas"/>
         <DCCReference Include="src\core\usercase\impl\CleanArch_EmbrConf.Core.UserCase.Impl.EnterParkingLot.pas"/>
-        <DCCReference Include="src\core\entity\CleanArch_EmbrConf.Core.Entity.Interfaces.pas"/>
-        <DCCReference Include="src\core\entity\impl\CleanArch_EmbrConf.Core.Entity.Impl.ParkingLot.pas"/>
-        <DCCReference Include="src\core\entity\impl\CleanArch_EmbrConf.Core.Entity.Impl.ParkedCar.pas"/>
-        <DCCReference Include="src\core\repository\CleanArch_EmbrConf.Core.Repository.Interfaces.pas"/>
         <DCCReference Include="src\core\usercase\impl\CleanArch_EmbrConf.Core.UserCase.Impl.GetParkingLot.pas"/>
-        <DCCReference Include="src\infra\repository\CleanArch_EmbrConf.Infra.Repository.Memory.pas"/>
+        <DCCReference Include="src\core\repository\CleanArch_EmbrConf.Core.Repository.Interfaces.pas"/>
+        <DCCReference Include="src\core\entity\CleanArch_EmbrConf.Core.Entity.Interfaces.pas"/>
+        <DCCReference Include="src\core\entity\impl\CleanArch_EmbrConf.Core.Entity.Impl.ParkedCar.pas"/>
+        <DCCReference Include="src\core\entity\impl\CleanArch_EmbrConf.Core.Entity.Impl.ParkingLot.pas"/>
+        <DCCReference Include="src\controller\CleanArch_EmbrConf.Controller.ParkinLot.pas"/>
         <DCCReference Include="src\adapter\CleanArch_EmbrConf.Adapter.interfaces.pas"/>
         <DCCReference Include="src\adapter\impl\CleanArch_EmbrConf.Adapter.Impl.ParkingLotAdapter.pas"/>
         <BuildConfiguration Include="Release">

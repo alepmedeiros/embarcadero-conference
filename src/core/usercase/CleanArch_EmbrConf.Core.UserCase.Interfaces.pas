@@ -3,7 +3,8 @@ unit CleanArch_EmbrConf.Core.UserCase.Interfaces;
 interface
 
 uses
-  CleanArch_EmbrConf.Core.Entity.Interfaces;
+  CleanArch_EmbrConf.Core.Entity.Interfaces,
+  System.JSON;
 
 type
   iEnterParkingLot = interface

@@ -73,7 +73,7 @@ end;
 
 function TParkedCar.Plate: String;
 begin
-  if TRegEx.IsMatch(FPlate, '\w[A-Z]{1,3}-[0-9]{1,4}') then
+  if not TRegEx.IsMatch(FPlate, '\w[A-Z]{1,3}-[0-9]{1,4}') then
     raise Exception.Create('Invalid Plate');
   result := FPlate;
 end;

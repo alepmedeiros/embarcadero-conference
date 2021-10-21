@@ -5,7 +5,7 @@ interface
 uses
   CleanArch_EmbrConf.Core.UserCase.Interfaces,
   CleanArch_EmbrConf.Core.Repository.Interfaces,
-  CleanArch_EmbrConf.Core.Entity.Interfaces;
+  CleanArch_EmbrConf.Core.Entity.Interfaces, System.JSON;
 
 type
   TGetParkingLot = class(TInterfacedObject, iGetParkingLot)
